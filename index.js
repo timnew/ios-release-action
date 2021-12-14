@@ -3,10 +3,15 @@ const exec = require("@actions/exec");
 
 async function run() {
   try {
+    const apiKeyFilePath = core.getInput("api-key-file-path")
+    const apiKyeContent = core.getInput("api-key-content")
 
     // Check p8 file
-    if (!(core.getInput("api-key-file-path") ^ core.getInput("api-key-key-content"))) {
-      throw new Error("api-key-file-path and api-key-key-content must be provided exactly one, not none, also not both.");
+    if (apiKeyFilePath === '' && apiKyeContent === '') {
+      throw new Error("Either api-key-file-path or api-key-content must be provided");
+    }
+    if (apiKeyFilePath !== '' && apiKyeContent !== '') {
+      throw new Error("Only one value of api-key-file-path and api-key-content should be provided");
     }
 
     // Setup ENV
@@ -15,7 +20,7 @@ async function run() {
     process.env.API_KEY_ID = core.getInput("api-key-id");
     process.env.API_KEY_ISSUER = core.getInput("api-key-issuer");
     process.env.API_KEY_FILE_PATH = core.getInput("api-key-file-path");
-    process.env.API_KEY_CONTENT = core.getInput("api-key-key-content");
+    process.env.API_KEY_CONTENT = core.getInput("api-key-content");
 
 
     // Execute build.sh
