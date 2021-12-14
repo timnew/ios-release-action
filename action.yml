@@ -1,0 +1,23 @@
+name: "iOS Release Action"
+description: "Submit IPA to iTunesConnect, could be both or either TestFlight or AppStore"
+inputs:
+  api-key-issuer:
+    description: "API key issuer ID."
+    required: true
+  api-key-id:
+    description: "iTunes Connect API key id."
+    required: true
+  api-key-content:
+    description: "Content of iTunes Connect API key p8 file."
+    required: false
+    default: ""
+  api-key-file-path:
+    description: "Path to iTunes Connect API key p8 file."
+    required: false
+    default: ""
+  ipa-path:
+    description: "Path to IPA file"
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"
