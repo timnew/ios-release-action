@@ -3,6 +3,7 @@ default_platform(:ios)
 platform :ios do
   desc 'Publish app to the iTunes Connect'
   lane :publish do
+    puts(env('API_KEY_CONTENT').lines.count)
     app_store_connect_api_key(
       key_id: env('API_KEY_ID'),
       issuer_id: env('API_KEY_ISSUER'),
