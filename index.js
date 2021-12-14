@@ -15,7 +15,7 @@ async function run() {
     }
 
     // Setup ENV
-    process.env.IPA_PATH = core.getInput("ipa_path");
+    process.env.IPA_PATH = core.getInput("ipa-path");
 
     process.env.API_KEY_ID = core.getInput("api-key-id");
     process.env.API_KEY_ISSUER = core.getInput("api-key-issuer");
