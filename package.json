@@ -1,23 +1,22 @@
 {
-  "name": "ios-build-release",
+  "name": "ios-release-action",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "package": "ncc build -m"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tinmnew/ios-build-release.git"
+    "url": "git+ssh://git@github.com/tinmnew/ios-release-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tinmnew/ios-build-release./issues"
+    "url": "https://github.com/tinmnew/ios-release-action/issues"
   },
-  "homepage": "https://github.com/tinmnew/ios-build-release.#readme",
+  "homepage": "https://github.com/tinmnew/ios-release-action/#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.3",
